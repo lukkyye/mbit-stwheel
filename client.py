@@ -39,7 +39,7 @@ match decision:
 print("Triying to connect: ")
 while True:
     try:
-        get_serial_data = microbit.Mbit(baudrate, select_port).connect()
+        get_serial_data = Mbit(baudrate, select_port).connect()
         control = VX360Gamepad()
         number_regex = re.compile(r'-?\d+')
         break
@@ -53,11 +53,11 @@ while True:
 
 while True:
     try:
-        new_data_string = microbit.Mbit.data_decoder(get_serial_data)
+        new_data_string = Mbit.data_decoder(get_serial_data)
 
         if new_data_string:
-            # Convertir el valor del acelerómetro a un valor entre -32767 y 32767 (rango del joystick)
-            joystick_value = int(microbit.Mbit.get_numbers(new_data_string, number_regex) * 32767 / 2048)
+            # Convierte el valor del acelerómetro a un valor entre -32767 y 32767 (rango del joystick)
+            joystick_value = int(Mbit.get_numbers(new_data_string, number_regex) * 32767 / 2048)
 
             # Actualizar el estado del joystick en el gamepad virtual
             control.left_joystick(x_value=-joystick_value, y_value=0)
