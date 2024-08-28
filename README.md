@@ -4,6 +4,8 @@ Es un script de Python que utiliza las librerias VGamepad y Pyserial, para obten
 ## Para utilizarlo
 1. Clona el repositorio
 2. Ubicate en la carpeta 
-3. Ejecuta `$ pip install -r requirements.txt` para instalar las dependencias
-4. Conecta tu micro:bit
-5. Luego ejecuta `$ python client.py`
+3. Ejecuta
+   ```bash $ pip install -r requirements.txt```
+   para instalar las dependencias
+5. Conecta tu micro:bit
+6. Luego ejecuta ```bash $ python client.py```
