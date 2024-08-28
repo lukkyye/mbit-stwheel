@@ -16,12 +16,14 @@ class Mbit:
         print("Connected succesfully")
         return serial_on
 
-    # Recorre la string, obtiene los numeros y luego retorna un promedio.
+    # Recorre la string, obtiene los numeros y luego retorna un promedio (En un intento de suavizar la sensibilidad)
+    @classmethod
     def get_numbers(self, data, number_regex):
         numbers = number_regex.findall(data)
         return (sum(int(number) for number in numbers)) / len(numbers)
 
     # Obtiene la informacion y la decodifica, devuelve una string.
+    @classmethod
     def data_decoder(self, serial_base):
         return serial_base.readline().decode().strip()
 
